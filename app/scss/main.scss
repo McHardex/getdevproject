@@ -1,0 +1,333 @@
+@import "./_mixins.scss";
+@import "./placeholders.scss";
+@import "./variables.scss";
+
+// @media only screen 
+//   and (min-device-width: 320px) 
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+body {
+  margin: 0;
+  width: 100%;
+  background: #9d9d9d;
+}
+
+.container {  
+  width: 320px;  
+  margin: 0 auto;
+  &:hover {
+    // transform: translate(800px,0);
+    // -webkit-transform: translate(0,0); /** Chrome & Safari **/
+    // -o-transform: translate(800px,0); /** Opera **/
+    // -moz-transform: translate(800px,0); /** Firefox **/
+    .menu-info-container {
+      display: block;
+    }
+    #dashboard-info {
+      opacity: 0.5;
+    }
+  }
+ 
+  .menu-info-container {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    // transition: all 2s ease-in-out;
+    // -webkit-transition: all 5s ease-in-out; /** Chrome & Safari **/
+    // -moz-transition: all 2s ease-in-out; /** Firefox **/
+    // -o-transition: all 2s ease-in-out; /** Opera **/
+    .menu-header {
+      .image-header {
+        img {
+          width: 294px;
+        }
+        .profile-details {
+          display: flex;
+          align-items: center;
+          position: relative;
+          bottom: 70px;
+          margin: 0 10px;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          span {
+            @include font-face("ProximaNovaSoft-Regular");
+            font-size: 18px;
+            color: #FFFFFF;
+            line-height: 100%;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .side-menu {
+      height: 568px;
+      width: 294px;
+      position: relative;
+      background-color: #FFFFFF;
+      bottom: 55px;
+      .dashboard-side-menu, .account, .card, .payment, .transfer, .airtime, .setting{
+        display: flex;
+        align-items: center;
+        padding: 10px 30px;
+        height: 55px;
+
+        h1 {
+          @include font-face("ProximaNovaSoft-Regular");
+          font-size: 16px;
+          color: #8D52DA;
+          line-height: 100%;
+          margin-left: 20px;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .card {
+        background-color: #F7F0FC;
+        opacity: 100%;
+      }
+    }
+  }
+
+  // dashboard info
+  .header {
+    width: 100%;
+    height: 56px;
+    background-color: #77439E;
+    
+    .dashboard {
+      position: relative;
+      bottom: 60px;
+  }
+    .menu-icon {
+      width: 30px;
+      height: 30px;
+      padding: 15px 15px 0;
+      .a {
+        width: 25px;
+        @include menuIcon;
+      }
+      .b {
+        width: 20px;
+        @include menuIcon;
+      }
+      .c {
+        width: 15px;
+        @include menuIcon;
+      }
+    }
+  
+    h1 {
+      font-size: 20px;
+      line-height: 100%;
+      text-align: center;
+      padding: 18px 60px;
+      color: $colorwhite;
+      @include font-face("ProximaNovaSoft-Regular");
+    }
+  }
+}
+
+.balance {
+  background-color: #ba6ff5;
+  height: 323px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+
+  .balance-texts {
+    .balText {
+      @include font-face("ProximaNovaSoft-Regular");
+      font-size: 18px;
+      color: $colorwhite;
+      line-height: 100%;
+
+    }
+    .balanceAmount {
+      @include font-face("ProximaNovaSoft-Semibold");
+      font-size: 32px;
+      color: $colorwhite;
+      line-height: 100%;
+
+    }
+    .sp {
+      @include font-face("ProximaNovaSoft-Semibold");
+      font-size: 24px;
+      color: $colorwhite;
+      line-height: 100%;
+    }
+  }
+}
+
+.transition-icon {
+  text-align: center;
+  .dot {
+    @include bullet;
+    opacity: 1;
+  }
+  .dot2 {
+    @include bullet;
+    opacity: 0.5;
+  }
+}
+
+.latest-transaction {
+  width: 100%;
+  height: 42px;
+  background-color: #77439E;
+  margin-top: -16px;
+
+  p {
+    @include font-face("ProximaNovaSoft-Medium");
+    font-size: 14px;
+    color: $colorwhite;
+    padding: 15px;
+  }
+}
+
+.details1, .details2, .details3, .details4 {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 3px 0;
+}
+
+.details2, .details4 {
+  background-color: #F1F1F1;
+}
+
+.amount-location {
+  background-color: #FFFFFF;
+  height: 298px;
+
+  h1 {
+    @include location;
+    @include font-face("ProximaNovaSoft-Semibold");
+  }
+  p {
+    @include date;
+    @include font-face("ProximaNovaSoft-Medium");
+  }
+  .location {
+    padding: 0 15px;
+  }
+  .amount {
+    text-align: end;
+    padding: 0 15px;
+  .green-col {
+    color: #16967A;
+  }
+  .red-col {
+    color: #E44235;
+  }
+  }
+}
+// }
+
+
+// @media only screen 
+//   and (min-device-width: 320px) 
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+
+
+//     .container {  
+//       width: 100%;
+//       .header {
+//         width: 100%;
+//         height: 120px;
+    
+//         .menu-icon {
+//           width: 30px;
+//           height: 30px;
+//           padding: 30px 15px 0;
+//           .a {
+//             width: 50px;
+//             @include menuIconMobile;
+//           }
+//           .b {
+//             width: 40px;
+//             @include menuIconMobile;
+//           }
+//           .c {
+//             width: 30px;
+//             @include menuIconMobile;
+//           }
+//         }
+      
+//         h1 {
+//           font-size: 40px;
+//           font-weight: 100;
+//           text-align: center;
+//           padding: 36px 60px;
+//         }
+//       }
+//     }
+    
+//     .balance {
+//       height: 646px;
+    
+//       .balance-texts {
+//         .balText {
+//           font-size: 36px;
+//         }
+//         .balanceAmount {
+//           font-size: 64px;
+    
+//         }
+//         .sp {
+//           font-size: 48px;
+//         }
+//       }
+//     }
+    
+//     .transition-icon {
+//       text-align: center;
+//       .dot {
+//         @include bulletMobile;
+//         opacity: 1;
+//       }
+//       .dot2 {
+//         @include bulletMobile;
+//         opacity: 0.5;
+//       }
+//     }
+    
+//     .latest-transaction {
+//       height: 84px;
+//         margin-top: -27px;
+    
+//       p {
+//         font-size: 28px;
+//         padding: 30px;
+//       }
+//     }
+    
+//     .details1, .details2, .details3, .details4 {
+//       height: 130px;
+//     }
+//     .amount-location {
+//       height: 600px;
+    
+//       h1 {
+//         font-size: 32px;
+//       }
+//       p {
+//         font-size: 28px;
+//       }
+//       .location, .amount {
+//         padding: 0 30px;
+//       }
+//     }
+// }
+
+
+

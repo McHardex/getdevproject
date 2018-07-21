@@ -1,0 +1,50 @@
+@mixin font-face($family) {
+	font-family: $family;
+}
+
+@mixin menuIcon {
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+}
+
+@mixin menuIconMobile {
+  height: 6px;
+  margin: 8px 0;
+  background-color: white;
+}
+
+@mixin bullet {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@mixin bulletMobile {
+  height: 20px;
+  width: 20px;
+  margin: 0 4px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@mixin location {
+  font-size: 16px;
+  color: #959595;
+  line-height: 100%;
+}
+
+@mixin date {
+  font-size: 14px;
+  color: #959595;
+  font-weight: 116;
+  opacity: 0.6;
+}
+
+@mixin padding {
+  padding: 0 15px;
+}
