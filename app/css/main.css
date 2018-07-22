@@ -6,27 +6,34 @@ body {
 .container {
   width: 320px;
   margin: 0 auto; }
+  .container .overlay {
+    z-index: 1;
+    background-color: #000000;
+    opacity: 0.5;
+    visibility: hidden;
+    position: absolute;
+    height: 718px;
+    width: 320px; }
   .container:hover .menu-info-container {
     display: block; }
-  .container:hover #dashboard-info {
-    opacity: 0.5;
-    background-color: #000000;
-    z-index: 0; }
+  .container:hover .overlay {
+    visibility: visible; }
   .container .menu-info-container {
     display: none;
-    z-index: 1;
+    z-index: 2;
     position: absolute; }
     .container .menu-info-container .menu-header {
       height: 153px; }
       .container .menu-info-container .menu-header .image-header {
-        height: 153px; }
+        height: 153px;
+        background-image: url(../Assets/Images/SideMenu/menu-header-bg.png); }
         .container .menu-info-container .menu-header .image-header img {
           width: 294px; }
         .container .menu-info-container .menu-header .image-header .profile-details {
           display: flex;
           align-items: center;
           position: relative;
-          bottom: 80px;
+          top: 75px;
           margin: 0 20px; }
           .container .menu-info-container .menu-header .image-header .profile-details img {
             width: 50px;
@@ -44,18 +51,36 @@ body {
       position: relative;
       background-color: #FFFFFF;
       bottom: 3px; }
-      .container .menu-info-container .side-menu .dashboard-side-menu, .container .menu-info-container .side-menu .account, .container .menu-info-container .side-menu .card, .container .menu-info-container .side-menu .payment, .container .menu-info-container .side-menu .transfer, .container .menu-info-container .side-menu .airtime, .container .menu-info-container .side-menu .setting {
+      .container .menu-info-container .side-menu .dashboard-side-menu,
+      .container .menu-info-container .side-menu .account,
+      .container .menu-info-container .side-menu .card,
+      .container .menu-info-container .side-menu .payment,
+      .container .menu-info-container .side-menu .transfer,
+      .container .menu-info-container .side-menu .airtime,
+      .container .menu-info-container .side-menu .setting {
         display: flex;
         align-items: center;
         padding: 10px 20px;
         height: 55px; }
-        .container .menu-info-container .side-menu .dashboard-side-menu h1, .container .menu-info-container .side-menu .account h1, .container .menu-info-container .side-menu .card h1, .container .menu-info-container .side-menu .payment h1, .container .menu-info-container .side-menu .transfer h1, .container .menu-info-container .side-menu .airtime h1, .container .menu-info-container .side-menu .setting h1 {
+        .container .menu-info-container .side-menu .dashboard-side-menu h1,
+        .container .menu-info-container .side-menu .account h1,
+        .container .menu-info-container .side-menu .card h1,
+        .container .menu-info-container .side-menu .payment h1,
+        .container .menu-info-container .side-menu .transfer h1,
+        .container .menu-info-container .side-menu .airtime h1,
+        .container .menu-info-container .side-menu .setting h1 {
           font-family: "ProximaNovaSoft-Regular";
           font-size: 16px;
           color: #8D52DA;
           line-height: 100%;
           margin-left: 20px; }
-        .container .menu-info-container .side-menu .dashboard-side-menu img, .container .menu-info-container .side-menu .account img, .container .menu-info-container .side-menu .card img, .container .menu-info-container .side-menu .payment img, .container .menu-info-container .side-menu .transfer img, .container .menu-info-container .side-menu .airtime img, .container .menu-info-container .side-menu .setting img {
+        .container .menu-info-container .side-menu .dashboard-side-menu img,
+        .container .menu-info-container .side-menu .account img,
+        .container .menu-info-container .side-menu .card img,
+        .container .menu-info-container .side-menu .payment img,
+        .container .menu-info-container .side-menu .transfer img,
+        .container .menu-info-container .side-menu .airtime img,
+        .container .menu-info-container .side-menu .setting img {
           width: 30px;
           height: 30px; }
       .container .menu-info-container .side-menu .card {
@@ -64,7 +89,8 @@ body {
   .container #dashboard-info .header {
     width: 100%;
     height: 56px;
-    background-color: #77439E; }
+    background-color: #77439E;
+    z-index: 0; }
     .container #dashboard-info .header .dashboard {
       position: relative;
       bottom: 60px; }
@@ -140,21 +166,25 @@ body {
     height: 42px;
     background-color: #77439E;
     margin-top: -16px; }
-    .container .latest-transaction p {
+    .container .latest-transaction h1 {
       font-family: "ProximaNovaSoft-Medium";
       font-size: 14px;
       color: #FFFFFF;
       padding: 15px; }
-  .container .details1, .container .details2, .container .details3, .container .details4 {
+  .container .details1,
+  .container .details2,
+  .container .details3,
+  .container .details4 {
     display: flex;
     justify-content: space-between;
     height: 65px;
     padding: 3px 0; }
-  .container .details2, .container .details4 {
+  .container .details2,
+  .container .details4 {
     background-color: #F1F1F1; }
   .container .amount-location {
     background-color: #FFFFFF;
-    height: 299px; }
+    height: 304px; }
     .container .amount-location h1 {
       font-size: 16px;
       color: #959595;
@@ -175,3 +205,166 @@ body {
         color: #16967A; }
       .container .amount-location .amount .red-col {
         color: #E44235; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    margin: 0;
+    width: 100%;
+    background: #9d9d9d; }
+  .container {
+    width: 100%;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    /** Chrome & Safari **/
+    -moz-transition: all 0.3s ease-in-out;
+    /** Firefox **/
+    -o-transition: all 0.3s ease-in-out;
+    /** Opera **/ }
+    .container:hover {
+      position: fixed;
+      transform: translate(882px, 0);
+      -webkit-transform: translate(882px, 0);
+      /** Chrome & Safari **/
+      -o-transform: translate(882px, 0);
+      /** Opera **/
+      -moz-transform: translate(882px, 0);
+      /** Firefox **/ }
+    .container .overlay {
+      height: 1034px; }
+    .container .menu-info-container {
+      width: 100%;
+      position: absolute;
+      left: -882px; }
+      .container .menu-info-container .menu-header {
+        height: 337px; }
+        .container .menu-info-container .menu-header .image-header {
+          background-image: url("../Assets/Images/SideMenu/menu-header-bg@3x.png");
+          background-repeat: no-repeat;
+          height: 335px; }
+          .container .menu-info-container .menu-header .image-header img {
+            width: 294px; }
+          .container .menu-info-container .menu-header .image-header .profile-details {
+            height: 250px;
+            top: 70px;
+            margin: 0 40px; }
+            .container .menu-info-container .menu-header .image-header .profile-details img {
+              width: 150px;
+              height: 150px; }
+            .container .menu-info-container .menu-header .image-header .profile-details span {
+              font-family: "ProximaNovaSoft-Regular";
+              font-size: 40px;
+              margin-left: 30px; }
+      .container .menu-info-container .side-menu {
+        height: fit-content;
+        width: 90%; }
+        .container .menu-info-container .side-menu .dashboard-side-menu,
+        .container .menu-info-container .side-menu .account,
+        .container .menu-info-container .side-menu .card,
+        .container .menu-info-container .side-menu .payment,
+        .container .menu-info-container .side-menu .transfer,
+        .container .menu-info-container .side-menu .airtime,
+        .container .menu-info-container .side-menu .setting {
+          padding: 10px 40px;
+          height: 80px; }
+          .container .menu-info-container .side-menu .dashboard-side-menu h1,
+          .container .menu-info-container .side-menu .account h1,
+          .container .menu-info-container .side-menu .card h1,
+          .container .menu-info-container .side-menu .payment h1,
+          .container .menu-info-container .side-menu .transfer h1,
+          .container .menu-info-container .side-menu .airtime h1,
+          .container .menu-info-container .side-menu .setting h1 {
+            font-family: "ProximaNovaSoft-Regular";
+            font-size: 26px;
+            margin-left: 30px; }
+          .container .menu-info-container .side-menu .dashboard-side-menu img,
+          .container .menu-info-container .side-menu .account img,
+          .container .menu-info-container .side-menu .card img,
+          .container .menu-info-container .side-menu .payment img,
+          .container .menu-info-container .side-menu .transfer img,
+          .container .menu-info-container .side-menu .airtime img,
+          .container .menu-info-container .side-menu .setting img {
+            width: 60px;
+            height: 60px; }
+    .container #dashboard-info {
+      /** Opera **/
+      width: 100%; }
+      .container #dashboard-info .header {
+        width: 100%;
+        height: 100px; }
+        .container #dashboard-info .header .dashboard {
+          bottom: 95px; }
+        .container #dashboard-info .header .menu-icon {
+          width: 60px;
+          height: 60px;
+          padding: 30px 20px 0; }
+          .container #dashboard-info .header .menu-icon .a {
+            width: 50px;
+            height: 6px;
+            margin: 8px 0;
+            background-color: white; }
+          .container #dashboard-info .header .menu-icon .b {
+            width: 40px;
+            height: 6px;
+            margin: 8px 0;
+            background-color: white; }
+          .container #dashboard-info .header .menu-icon .c {
+            width: 30px;
+            height: 6px;
+            margin: 8px 0;
+            background-color: white; }
+        .container #dashboard-info .header h1 {
+          font-size: 40px; }
+    .container .balance .balance-texts .balText {
+      font-family: "ProximaNovaSoft-Regular";
+      font-size: 36px; }
+    .container .balance .balance-texts .balanceAmount {
+      font-family: "ProximaNovaSoft-Semibold";
+      font-size: 40px; }
+    .container .balance .balance-texts .sp {
+      font-family: "ProximaNovaSoft-Semibold";
+      font-size: 30px; }
+    .container .transition-icon {
+      text-align: center; }
+      .container .transition-icon .dot {
+        height: 20px;
+        width: 20px;
+        margin: 0 4px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        display: inline-block; }
+      .container .transition-icon .dot2 {
+        height: 20px;
+        width: 20px;
+        margin: 0 4px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        display: inline-block; }
+    .container .latest-transaction {
+      height: 84px;
+      position: relative;
+      bottom: 3px; }
+      .container .latest-transaction h1 {
+        font-family: "ProximaNovaSoft-Medium";
+        font-size: 28px;
+        padding: 30px; }
+    .container .details1,
+    .container .details2,
+    .container .details3,
+    .container .details4 {
+      height: 125px;
+      padding: 3px 0; }
+    .container .details2,
+    .container .details4 {
+      background-color: #F1F1F1; }
+    .container .amount-location {
+      background-color: #FFFFFF;
+      height: 488px; }
+      .container .amount-location h1 {
+        font-size: 32px; }
+      .container .amount-location p {
+        font-size: 28px; }
+      .container .amount-location .location {
+        padding: 0 30px; }
+      .container .amount-location .amount {
+        padding: 0 30px; } }
