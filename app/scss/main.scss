@@ -32,16 +32,18 @@ body {
         img {
           width: 30px;
           height: 30px;
-          float: left;
+          // float: left;
           padding: 12px 15px 0;
         }
       }
       .dashboard {
+        position: relative;
+        bottom: 100%;
         h1 {
           font-size: 20px;
           line-height: 100%;
           text-align: center;
-          padding: 18px 60px;
+          padding: 5px;
           color: $colorwhite;
           @include font-face("ProximaNovaSoft-Regular");
         }
@@ -233,16 +235,17 @@ body {
       .header {
         width: 100%;
         height: 100px;
-        .dashboard {
-          bottom: 95px;
-        }
         .menu-icon {
           width: 60px;
           height: 60px;
           padding: 30px 20px 0;
         }
-        h1 {
-          font-size: 40px;
+        .dashboard {
+          bottom: 95px;
+          h1 {
+            font-size: 40px;
+            padding: 18px;
+          }
         }
       }
     }

@@ -25,15 +25,17 @@ body {
         .container #dashboard-info .header .menu-icon img {
           width: 30px;
           height: 30px;
-          float: left;
           padding: 12px 15px 0; }
-      .container #dashboard-info .header .dashboard h1 {
-        font-size: 20px;
-        line-height: 100%;
-        text-align: center;
-        padding: 18px 60px;
-        color: #FFFFFF;
-        font-family: "ProximaNovaSoft-Regular"; }
+      .container #dashboard-info .header .dashboard {
+        position: relative;
+        bottom: 100%; }
+        .container #dashboard-info .header .dashboard h1 {
+          font-size: 20px;
+          line-height: 100%;
+          text-align: center;
+          padding: 5px;
+          color: #FFFFFF;
+          font-family: "ProximaNovaSoft-Regular"; }
   .container .balance {
     background-color: #ba6ff5;
     height: 323px;
@@ -216,14 +218,15 @@ body {
       .container #dashboard-info .header {
         width: 100%;
         height: 100px; }
-        .container #dashboard-info .header .dashboard {
-          bottom: 95px; }
         .container #dashboard-info .header .menu-icon {
           width: 60px;
           height: 60px;
           padding: 30px 20px 0; }
-        .container #dashboard-info .header h1 {
-          font-size: 40px; }
+        .container #dashboard-info .header .dashboard {
+          bottom: 95px; }
+          .container #dashboard-info .header .dashboard h1 {
+            font-size: 40px;
+            padding: 18px; }
     .container .balance .balance-texts .balText {
       font-family: "ProximaNovaSoft-Regular";
       font-size: 36px; }
