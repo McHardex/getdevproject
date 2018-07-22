@@ -12,7 +12,8 @@ body {
   .container:hover .overlay {
     visibility: visible; }
   .container #dashboard-info {
-    height: 721px; }
+    height: 721px;
+    position: relative; }
     .container #dashboard-info .header {
       width: 100%;
       height: 56px;

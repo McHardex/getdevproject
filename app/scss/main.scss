@@ -20,6 +20,7 @@ body {
   } // dashboard info
   #dashboard-info {
     height: 721px;
+    position: relative;
     .header {
       width: 100%;
       height: 56px;
@@ -36,8 +37,6 @@ body {
         }
       }
       .dashboard {
-        // position: relative;
-        // bottom: 40px;
         h1 {
           font-size: 20px;
           line-height: 100%;
