@@ -1,387 +1,513 @@
 @import "./_mixins.scss";
-@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 body {
   margin: 0;
-  width: 100%;
-  background: #9d9d9d;
+  @include font-face("ProximaNovaSoft-Regular");
 }
 
-.container {
-  width: 320px;
-  margin: 0 auto;
-  height: 721px;
-  &:hover {
-    .menu-info-container {
-      display: block;
-    }
-    .overlay {
-      visibility: visible;
-    }
-  } // dashboard info
-  #dashboard-info {
-    height: 721px;
-    position: relative;
-    .header {
-      width: 100%;
-      height: 56px;
-      background-color: #77439E;
-      z-index: 0;
-      .menu-icon {
-        width: 56px;
-        height: 56px;
-        img {
-          width: 30px;
-          height: 30px;
-          // float: left;
-          padding: 12px 15px 0;
-        }
-      }
-      .dashboard {
-        position: relative;
-        bottom: 100%;
-        h1 {
-          font-size: 20px;
-          line-height: 100%;
-          text-align: center;
-          padding: 5px;
-          color: $colorwhite;
-          @include font-face("ProximaNovaSoft-Regular");
-        }
-      }
-    }
+* {
+  box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+
+  .mySlides {
+    display: none;
   }
-  .balance {
-    background-color: #ba6ff5;
-    height: 323px;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+  .slider-text {
     text-align: center;
-    .balance-texts {
-      .balText {
-        @include font-face("ProximaNovaSoft-Regular");
-        font-size: 18px;
-        color: $colorwhite;
-        line-height: 100%;
-      }
-      .balanceAmount {
-        @include font-face("ProximaNovaSoft-Semibold");
-        font-size: 32px;
-        color: $colorwhite;
-        line-height: 100%;
-      }
-      .sp {
-        @include font-face("ProximaNovaSoft-Semibold");
-        font-size: 24px;
-        color: $colorwhite;
-        line-height: 100%;
-      }
-    }
-  }
-  .transition-icon {
-    text-align: center;
-    .dot {
-      @include bullet;
-      opacity: 1;
-    }
-    .dot2 {
-      @include bullet;
-      opacity: 0.5;
-    }
-  }
-  .latest-transaction {
-    width: 100%;
-    height: 42px;
-    background-color: #77439E;
-    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: wheat;
+
     h1 {
-      @include font-face("ProximaNovaSoft-Medium");
-      font-size: 14px;
-      color: $colorwhite;
-      padding: 15px;
+      font-family: 'Pacifico', cursive;
+      color: #FFF;
+      font-weight: 400;
+      font-size: 60px;
+      margin-bottom: 0;
+    }
+
+    h4 {
+      letter-spacing: 10px;
+      color: #FFF;
+      margin-top: 0;
+      font-size: 15px;
+    }
+
+    button {
+      color: #FFF;
+      background: #eb3d06;
+      outline: none;
+      font-size: 13px;
+      padding: 5px 20px;
+      border: 1px solid #eb3d06;
+    }
+
+    .dots {
+      margin-top: 70px;
+
+      .dot1 {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #ea3d06;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+        .active,
+        &:hover {
+          background-color: #717171;
+        }
+      }
+
+      .dot2 {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #FFF;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+        .active,
+        &:hover {
+          background-color: #717171;
+        }
+      }
     }
   }
-  .details1,
-  .details2,
-  .details3,
-  .details4 {
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  header {
+    position: absolute;
+    top: 40px;
+    color: #FFF;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: #01020991;
+    @include font-face("ProximaNovaSoft-Regular");
+
+    span.white-hea {
+      font-weight: bolder;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li.col-hom {
+        color: #ec3d06;
+      }
+
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.container2 {
+  width: 100%;
+
+  .cont-bdy {
+    display: flex;
+    padding: 60px;
+    margin: 0 auto;
+    width: 95%;
+
+    i {
+      font-size: 25px;
+      color: #ea3d06;
+      margin-right: 30px
+    }
+
+    .settings,
+    .like,
+    .profile {
+      display: flex;
+      align-content: baseline;
+      margin-right: 30px;
+
+      .setngs-cont {
+        width: 100%;
+
+        h1 {
+          font-size: 14px;
+          margin-top: 0;
+        }
+
+        p {
+          color: #717171;
+        }
+      }
+    }
+  }
+}
+
+.container3 {
+  background: #e93d06;
+
+  .cont3-body {
+    display: flex;
+    align-items: center;
+    padding: 50px 80px;
+
+    img {
+      height: 360px;
+    }
+
+    .some-abt-us {
+      width: 50%;
+      text-align: left;
+      background: #FFF;
+      position: absolute;
+      left: 480px;
+      border-left: 2px solid #80808038;
+      border-top: 2px solid #80808038;
+
+      .pad-txt {
+        padding: 30px;
+
+        h1 {
+          font-family: 'Pacifico', cursive;
+          margin-top: 0;
+          font-size: 30px;
+          letter-spacing: 2px;
+
+          span.about-us {
+            color: #e93d06;
+          }
+        }
+
+        p {
+          color: #717171;
+        }
+      }
+
+      .div-colo {
+        display: flex;
+
+        .col1,
+        .col2,
+        .col3,
+        .col4 {
+          width: 35%;
+          height: 3px;
+        }
+
+        .col1 {
+          background: #9C27B0;
+        }
+
+        .col2 {
+          background: #39c93f;
+        }
+
+        .col3 {
+          background: #1ad6ee;
+        }
+
+        .col4 {
+          background: #FFC107;
+        }
+      }
+    }
+  }
+}
+
+.bst {
+  font-family: 'Pacifico', cursive;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+
+  span.b-services {
+    color: #e93d06;
+  }
+}
+
+.container4 {
+  padding: 80px;
+  padding-bottom: 0;
+
+  .cont4-holdr {
+    display: flex;
+    border-bottom: 1px solid #808080a3;
+    justify-content: space-evenly;
+
+    .contHoldr-three {
+      .settings3d {
+        text-align: center;
+        padding: 20px;
+
+        i {
+          font-size: 30px;
+          color: #e93d06;
+        }
+      }
+    }
+
+    .contHoldr-one,
+    .contHoldr-two,
+    .contHoldr-three {
+      padding: 20px;
+    }
+
+    .contHoldr-one,
+    .contHoldr-two {
+      border-right: 1px solid #808080a3;
+
+      .settings3d {
+        text-align: center;
+        padding: 20px;
+
+        i {
+          font-size: 30px;
+          color: #e93d06;
+        }
+      }
+    }
+  }
+}
+
+.container5 {
+  padding: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .cont4-holdr {
+    display: flex;
+    justify-content: space-evenly;
+
+    .contHoldr-three {
+      .settings3d {
+        text-align: center;
+        padding: 20px;
+
+        i {
+          font-size: 30px;
+          color: #e93d06;
+        }
+      }
+    }
+
+    .contHoldr-one,
+    .contHoldr-two,
+    .contHoldr-three {
+      padding: 20px;
+    }
+
+    .contHoldr-one,
+    .contHoldr-two {
+      border-right: 1px solid #808080a3;
+
+      .settings3d {
+        text-align: center;
+        padding: 20px;
+
+        i {
+          font-size: 30px;
+          color: #e93d06;
+        }
+      }
+    }
+  }
+}
+
+.container6 {
+  background: #15160017;
+  padding-top: 30px;
+
+  h1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+    span.b-posts {
+      color: #e93d06;
+    }
+  }
+
+  .contHoldr6 {
+    display: flex;
+    padding: 30px 80px;
+    justify-content: center;
+
+    .post1,
+    .post2,
+    .post3 {
+      width: 30%;
+      .imagetext-holdr {
+        display: flex;
+        margin-right: 10px;
+        width: fit-content;
+        margin: 0 auto;
+
+        img {
+          max-height: 230px;
+          max-width: 100%;
+        }
+
+        .date1,
+        .date2,
+        .date3 {
+          text-align: center;
+          background: #e83d07;
+          color: #FFF;
+          position: absolute;
+          width: 5%;
+        }
+      }
+
+      .txt {
+        width: 70%;
+        margin: 0 auto;
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: #434343f2;
+  color: #FFF;
+  padding: 1px;
+
+  .contacts {
     display: flex;
     justify-content: space-between;
-    height: 65px;
-    padding: 3px 0;
+    padding: 0 80px;
+
+    .phone-cont,
+    .email-cont {
+      display: flex;
+      align-items: baseline;
+
+      span.email {
+        color: #e63c07;
+      }
+    }
   }
-  .details2,
-  .details4 {
-    background-color: #F1F1F1;
-  }
-  .amount-location {
-    background-color: #FFFFFF;
-    height: 304px;
+
+  .footr-sect2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 80px;
+    border: 1px solid #80808038;
+
     h1 {
-      @include location;
-      @include font-face("ProximaNovaSoft-Semibold");
+      font-size: 14px;
     }
-    p {
-      @include date;
-      @include font-face("ProximaNovaSoft-Medium");
-    }
-    .location {
-      padding: 0 15px;
-    }
-    .amount {
-      text-align: end;
-      padding: 0 15px;
-      .green-col {
-        color: #16967A;
+
+    .abt-us {
+      display: flex;
+      align-items: center;
+      max-width: 40%;
+      margin-right: 20px;
+
+      .abtus-cont {
+        margin-right: 10px;
+
+        img {
+          height: 200px;
+        }
       }
-      .red-col {
-        color: #E44235;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    .newsletter {
+      max-width: 30%;
+      margin-right: 20px;
+
+      p {
+        text-align: left;
+      }
+
+      form {
+        input {
+          padding: 15px;
+          font-size: 18px;
+          outline: none;
+          background: #FFF;
+          width: 100%;
+        }
+
+        button {
+          min-width: 25%;
+          border: 0;
+          background: #e73d07;
+          color: #FFF;
+          padding: 12px;
+          font-size: 18px;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .we-social {
+      max-width: 30%;
+
+      i {
+        font-size: 25px;
+        color: #FFF;
       }
     }
   }
-  .overlay {
-    z-index: 1;
-    background-color: #000000;
-    opacity: 0.5;
-    visibility: hidden;
-    position: relative;
-    height: 718px;
-    width: 320px;
-    bottom: 100%;
-  } // menu-info container
-  .menu-info-container {
-    display: none;
-    z-index: 2;
-    position: absolute;
-    top: 0%;
-    .menu-header {
-      height: 153px;
-      .image-header {
-        height: 153px;
-        background-image: url(../Assets/Images/SideMenu/menu-header-bg.png);
-        img {
-          width: 294px;
-        }
-        .profile-details {
-          display: flex;
-          align-items: center;
-          position: relative;
-          top: 75px;
-          margin: 0 20px;
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-          }
-          span {
-            @include font-face("ProximaNovaSoft-Regular");
-            font-size: 18px;
-            color: #FFFFFF;
-            line-height: 100%;
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-    .side-menu {
-      height: 568px;
-      width: 294px;
-      position: relative;
-      background-color: #FFFFFF;
-      bottom: 3px;
-      .dashboard-side-menu,
-      .account,
-      .card,
-      .payment,
-      .transfer,
-      .airtime,
-      .setting {
-        display: flex;
-        align-items: center;
-        padding: 10px 20px;
-        height: 55px;
-        h1 {
-          @include font-face("ProximaNovaSoft-Regular");
-          font-size: 16px;
-          color: #8D52DA;
-          line-height: 100%;
-          margin-left: 20px;
-        }
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-      .card {
-        background-color: #F7F0FC;
-        opacity: 100%;
-      }
-    }
+
+  p {
+    text-align: center;
   }
 }
-
-// mobile and Tablets responsiveness
-@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    margin: 0;
-    width: 100%;
-    background: #9d9d9d;
-  }
-  .container {
-    #dashboard-info {
-      width: 100%;
-      position: fixed;
-      .header {
-        width: 100%;
-        height: 100px;
-        .menu-icon {
-          width: 60px;
-          height: 60px;
-          padding: 30px 20px 0;
-        }
-        .dashboard {
-          bottom: 95px;
-          h1 {
-            font-size: 40px;
-            padding: 18px;
-          }
-        }
-      }
-    }
-    .balance {
-      .balance-texts {
-        .balText {
-          @include font-face("ProximaNovaSoft-Regular");
-          font-size: 36px;
-        }
-        .balanceAmount {
-          @include font-face("ProximaNovaSoft-Semibold");
-          font-size: 40px;
-        }
-        .sp {
-          @include font-face("ProximaNovaSoft-Semibold");
-          font-size: 30px;
-        }
-      }
-    }
-    .transition-icon {
-      text-align: center;
-      .dot {
-        @include bulletMobile;
-      }
-      .dot2 {
-        @include bulletMobile;
-      }
-    }
-    .latest-transaction {
-      height: 84px;
-      position: relative;
-      bottom: 3px;
-      h1 {
-        @include font-face("ProximaNovaSoft-Medium");
-        font-size: 28px;
-        padding: 30px;
-      }
-    }
-    .details1,
-    .details2,
-    .details3,
-    .details4 {
-      height: 125px;
-      padding: 3px 0;
-    }
-    .details2,
-    .details4 {
-      background-color: #F1F1F1;
-    }
-    .amount-location {
-      background-color: #FFFFFF;
-      height: 488px;
-      h1 {
-        font-size: 32px
-      }
-      p {
-        font-size: 28px;
-      }
-      .location {
-        padding: 0 30px;
-      }
-      .amount {
-        padding: 0 30px;
-      }
-    }
-    width: 100%;
-    position: absolute;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    &:hover {
-      position: fixed;
-      transform: translate(882px, 0);
-      -webkit-transform: translate(882px, 0);
-      -o-transform: translate(882px, 0);
-      -moz-transform: translate(882px, 0);
-    }
-    .overlay {
-      height: 1034px;
-      width: 100%;
-      position: static;
-    } // menu info div
-    .menu-info-container {
-      width: 100%;
-      position: absolute;
-      left: -882px;
-      top: 0;
-      .menu-header {
-        height: 337px;
-        .image-header {
-          background-image: url("../Assets/Images/SideMenu/menu-header-bg@3x.png");
-          background-repeat: no-repeat;
-          height: 335px;
-          img {
-            width: 294px;
-          }
-          .profile-details {
-            height: 250px;
-            top: 70px;
-            margin: 0 40px;
-            img {
-              width: 150px;
-              height: 150px;
-            }
-            span {
-              @include font-face("ProximaNovaSoft-Regular");
-              font-size: 40px;
-              margin-left: 30px;
-            }
-          }
-        }
-      }
-      .side-menu {
-        height: fit-content;
-        width: 90%;
-        .dashboard-side-menu,
-        .account,
-        .card,
-        .payment,
-        .transfer,
-        .airtime,
-        .setting {
-          padding: 10px 40px;
-          height: 80px;
-          h1 {
-            @include font-face("ProximaNovaSoft-Regular");
-            font-size: 26px;
-            margin-left: 30px;
-          }
-          img {
-            width: 60px;
-            height: 60px;
-          }
-        }
-      }
-    }
-  }
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    rgb(92, 92, 92);
 }
