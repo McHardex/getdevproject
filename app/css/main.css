@@ -103,9 +103,9 @@ body {
   width: 100%; }
   .container2 .cont-bdy {
     display: flex;
-    padding: 60px;
-    margin: 0 auto;
-    width: 95%; }
+    padding: 60px 0;
+    width: 80%;
+    margin: 0 auto; }
     .container2 .cont-bdy i {
       font-size: 25px;
       color: #ea3d06;
@@ -135,7 +135,7 @@ body {
   .container3 .cont3-body {
     display: flex;
     align-items: center;
-    padding: 50px 80px; }
+    padding: 60px 80px; }
     .container3 .cont3-body img {
       height: 360px; }
     .container3 .cont3-body .some-abt-us {
@@ -190,7 +190,7 @@ body {
   .container4 .cont4-holdr {
     display: flex;
     border-bottom: 1px solid #808080a3;
-    justify-content: space-evenly; }
+    justify-content: space-between; }
     .container4 .cont4-holdr .contHoldr-three .settings3d {
       text-align: center;
       padding: 20px; }
@@ -243,13 +243,13 @@ body {
           color: #e93d06; }
 
 .container6 {
-  background: #15160017;
-  padding-top: 30px; }
+  background: #15160017; }
   .container6 h1 {
     text-align: center;
     font-family: 'Pacifico', cursive;
     font-size: 30px;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    padding-top: 30px; }
     .container6 h1 span.b-posts {
       color: #e93d06; }
   .container6 .contHoldr6 {
@@ -259,7 +259,8 @@ body {
     .container6 .contHoldr6 .post1,
     .container6 .contHoldr6 .post2,
     .container6 .contHoldr6 .post3 {
-      width: 30%; }
+      width: 30%;
+      margin-right: 30px; }
       .container6 .contHoldr6 .post1 .imagetext-holdr,
       .container6 .contHoldr6 .post2 .imagetext-holdr,
       .container6 .contHoldr6 .post3 .imagetext-holdr {
@@ -285,12 +286,12 @@ body {
           background: #e83d07;
           color: #FFF;
           position: absolute;
-          width: 5%; }
+          width: 4%;
+          line-height: 1; }
       .container6 .contHoldr6 .post1 .txt,
       .container6 .contHoldr6 .post2 .txt,
       .container6 .contHoldr6 .post3 .txt {
-        width: 70%;
-        margin: 0 auto; }
+        width: 80%; }
         .container6 .contHoldr6 .post1 .txt p,
         .container6 .contHoldr6 .post2 .txt p,
         .container6 .contHoldr6 .post3 .txt p {
@@ -352,7 +353,7 @@ footer {
     footer .footr-sect2 .we-social {
       max-width: 30%; }
       footer .footr-sect2 .we-social i {
-        font-size: 25px;
+        font-size: 20px;
         color: #FFF; }
   footer p {
     text-align: center; }
