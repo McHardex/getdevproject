@@ -30,8 +30,11 @@ $(document).ready(function() {
 
     $(".fa-align-justify").click(function() {
         $(this).siblings(".nav-menu").toggle("slow", () => {
-
         });
-        console.log('bukunmi');
+        if($('.nav-menu').css("display", "block")) {
+            $('.slider-text').hide();
+        } else if($('.nav-menu').css("display", "")) {
+            $('.slider-text').show();
+        } 
     });
 });
