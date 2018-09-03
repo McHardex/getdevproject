@@ -15,6 +15,10 @@ body {
 .slideshow-container {
     position: relative;
     margin: auto;
+    .image2 {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
     .mySlides {
         display: none;
     }
@@ -113,16 +117,23 @@ body {
         @include font-face("ProximaNovaSoft-Regular");
         span.white-hea {
             font-weight: bolder;
+            font-size: 20px;
         }
-        ul {
-            display: flex;
-            list-style-type: none;
-            li.col-hom {
-                color: #ec3d06;
+        .nav-menu {
+            display: block;
+            ul {
+                display: flex;
+                list-style-type: none;
+                li.col-hom {
+                    color: #ec3d06;
+                }
+                li {
+                    margin: 0 10px;
+                }
             }
-            li {
-                margin: 0 10px;
-            }
+        }
+        .fa-align-justify {
+            visibility: hidden;
         }
     }
 }
@@ -236,6 +247,8 @@ body {
         display: flex;
         border-bottom: 1px solid #808080a3;
         justify-content: space-between;
+        font-size: 16px;
+        width: 100%;
         .contHoldr-three {
             .settings3d {
                 text-align: center;
@@ -273,6 +286,8 @@ body {
     .cont4-holdr {
         display: flex;
         justify-content: space-evenly;
+        font-size: 16px;
+        width: 100%;
         .contHoldr-three {
             .settings3d {
                 text-align: center;
@@ -436,4 +451,185 @@ footer {
 ::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     color: rgb(92, 92, 92);
+}
+
+// for mobile devices
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .slideshow-container {
+        .slider-text {
+            top: 65%;
+        }
+        header {
+            flex-direction: column;
+            padding: 10px;
+            span.white-hea {
+                font-weight: bolder;
+            }
+            .nav-menu {
+                display: none;
+                ul {
+                    li.col-hom {
+                        color: #ec3d06;
+                    }
+                    li {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            .fa-align-justify {
+                visibility: visible;
+                font-size: 30px;
+                border: 3px solid #FFF;
+                padding: 2px;
+                margin: 10px;
+                border-radius: 10px;
+                min-width: 50px;
+                text-align: center;
+            }
+        }
+    }
+    .container2 {
+        width: 100%;
+        .cont-bdy {
+            flex-direction: column;
+            width: 70%;
+            font-size: 18px;
+            .settings,
+            .like,
+            .profile {
+                .setngs-cont {
+                    h1 {
+                        font-size: 30px;
+                        margin-top: 0;
+                    }
+                    p {
+                        color: #837f7f;
+                    }
+                }
+            }
+        }
+    }
+    .bst {
+        margin-top: 30px;
+        font-size: 45px;
+    }
+    .container4 {
+        padding: 0;
+        .cont4-holdr {
+            flex-direction: column;
+            border: none;
+            .contHoldr-three {
+                padding: 0;
+                .settings3d {
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+            .contHoldr-one,
+            .contHoldr-two {
+                border: none;
+                padding: 0;
+                .settings3d {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .container5 {
+        .cont4-holdr {
+            font-size: 12px;
+            flex-direction: column;
+            padding: 0;
+            .contHoldr-one,
+            .contHoldr-two {
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+    .container6 {
+        background: #15160017;
+        h1 {
+            font-size: 40px;
+        }
+        .contHoldr6 {
+            flex-direction: column;
+            padding: 0;
+            // align-items: center;
+            .post1,
+            .post2,
+            .post3 {
+                width: 100%;
+                padding: 0 60px;
+                .txt {
+                    width: 100%;
+                    font-size: 12px;
+                    text-align: center;
+                }
+                .imagetext-holdr {
+                    width: 100%;
+                    img {
+                        max-height: 100%;
+                        width: 100%;
+                    }
+                    .date1,
+                    .date2,
+                    .date3 {
+                        width: 10%;
+                        line-height: 1;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .contacts {
+            padding: 0 60px;
+            font-size: 24px;
+        }
+        .footr-sect2 {
+            flex-direction: column;
+            padding: 0 60px;
+            h1 {
+                font-size: 30px;
+                text-align: center;
+            }
+            .abt-us {
+                flex-direction: column;
+                max-width: 100%;
+                margin-right: 0;
+                align-items: normal;
+                .abtus-cont {
+                    margin: 0;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                p {
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+            .newsletter {
+                max-width: 100%;
+                margin-right: 0;
+                p {
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+            .we-social {
+                max-width: 100%;
+                i {
+                    font-size: 20px;
+                    color: #FFF;
+                }
+                .so-medias {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }

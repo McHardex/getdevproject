@@ -21,80 +21,79 @@ const runSequence = require('run-sequence');
 
 
 // compile scss to css using gulp-sass
-gulp.task('sass', () =>  {
-  return gulp.src('app/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+gulp.task('sass', () => {
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('app/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
 // watch all files in app/scss for changes
 gulp.task('watch', ['browserSync', 'sass'], () => {
-  gulp.watch('app/scss/**/*.scss', ['sass']); 
-  // Reloads the browser whenever HTML files change
-  gulp.watch('app/*.html', browserSync.reload); 
+    gulp.watch('app/scss/**/*.scss', ['sass']);
+    // Reloads the browser whenever HTML files change
+    gulp.watch('app/*.html', browserSync.reload);
 });
 
 // setup task for browserSyn live reloading
-gulp.task('browserSync', () =>  {
-  browserSync.init({
-    server: {
-      baseDir: 'app'
-    },
-  })
+gulp.task('browserSync', () => {
+    browserSync.init({
+        server: {
+            baseDir: 'app'
+        },
+        online: true
+    })
 })
 
 // setup for css files minification
 gulp.task('useref', () => {
-  return gulp.src('app/*.html')
-    .pipe(cssnano())
-    // Minifies only if it's a CSS file
-    .pipe(gulpIf('*.css', uglify()))
-    .pipe(gulp.dest('dist'))
+    return gulp.src('app/*.html')
+        .pipe(cssnano())
+        // Minifies only if it's a CSS file
+        .pipe(gulpIf('*.css', uglify()))
+        .pipe(gulp.dest('dist'))
 });
 
 // setup for optimizing images
-gulp.task('images',() => {
-  return gulp.src('app/Assets/Images/**/*.+(png|jpg|gif|svg)')
-  .pipe(cache(imagemin({
-      // Setting interlaced to true
-      interlaced: true
-    })))
-  .pipe(gulp.dest('dist/images'))
+gulp.task('images', () => {
+    return gulp.src('app/Assets/Images/**/*.+(png|jpg|gif|svg)')
+        .pipe(cache(imagemin({
+            // Setting interlaced to true
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/images'))
 });
 
 // copy fonts to dist folder
-gulp.task('fonts',() =>  {
-  return gulp.src('app/Assets/Fonts/Proxima Nova Soft/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+gulp.task('fonts', () => {
+    return gulp.src('app/Assets/Fonts/Proxima Nova Soft/**/*')
+        .pipe(gulp.dest('dist/fonts'))
 })
 
 // cleaning
 gulp.task('clean', () => {
-  return del.sync('dist').then((cb) => {
-    return cache.clearAll(cb);
-  });
+    return del.sync('dist').then((cb) => {
+        return cache.clearAll(cb);
+    });
 })
 
 
-gulp.task('clean:dist',() =>  {
-  return del.sync('dist');
+gulp.task('clean:dist', () => {
+    return del.sync('dist');
 })
 
 // Build Sequences
 // ---------------
 gulp.task('default', (callback) => {
-  runSequence(['sass','browserSync', 'watch'],
-    callback
-  )
+    runSequence(['sass', 'browserSync', 'watch'],
+        callback
+    )
 })
 
 gulp.task('build', (callback) => {
-  runSequence('clean:dist', 
-    ['sass', 'useref', 'images', 'fonts'],
-    callback
-  )
+    runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'],
+        callback
+    )
 })
-
