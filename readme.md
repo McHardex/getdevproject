@@ -1,1 +1,1 @@
-`link to project` https://getdevproject.herokuapp.com/
+`link to project` http://smart-measure.surge.sh/
